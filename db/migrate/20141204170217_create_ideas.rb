@@ -15,6 +15,7 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :date_type, default: ""
       t.boolean :hipster, default: false
       t.boolean :romantic, default: false
+      t.boolean :speakeasy, default: false
       t.string :description_link, default: ""
       t.text :description, default: ""
 

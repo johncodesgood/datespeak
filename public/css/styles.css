@@ -145,6 +145,13 @@ ul {
   height: 26%;
 }
 
+.bottom-bar {
+  width: 5%;
+  height: 5%;
+  margin-top: 10%;
+  margin-left: 46%;
+}
+
 .hidden-text {
   display: inline-block;
   width: 50%;
@@ -311,7 +318,7 @@ ul.accordion li .description{
 
 ul.accordion li .description h2{
     padding-top: 20px;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     font-style:normal;
     font-weight:bold;
     letter-spacing:1px;
@@ -336,14 +343,19 @@ ul.accordion li .description p{
     text-align: left;
 }
 ul.accordion li .description a{
-    position:absolute;
-    bottom:5px;
-    left:80px;
-    text-transform:none;
+/*    position:absolute;
+    bottom:5px;*/
+    /*left:80px;*/
+    position: relative;
+    margin-left: 80px;
+    text-align: left;
+    font-family: "Trebuchet MS", sans-serif;
+    /*text-transform:lowercase;*/
     /*font-style:normal;*/
     font-size:16px;
     text-decoration:none;
-    color:#888;
+    /*color:#888;*/
+    color: #D8D8D8;
 }
 ul.accordion li .description a:hover{
     color:#333;
@@ -351,7 +363,7 @@ ul.accordion li .description a:hover{
 }
 
 ul.accordion li .bgDescription{
-    background:transparent url(../images/bgDescription.png) repeat-x top left;
+    /*background:transparent url(../images/bgDescription.png) repeat-x top left;*/
     height:340px;
     position:absolute;
     bottom:0px;

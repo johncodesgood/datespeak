@@ -96,11 +96,22 @@ function welcome() {
     '<h3>Date Idea Speakeasy will let you in on the best date ideas in NYC. Tell me a little about what you\'re looking for and I\'ll create the perfect date.</h3>' +
     '</div></div><div class="hidden-text">' +
     '<div class="overlay" id="overlay-right">' +
-    '<a href="#" id="begin"><h2>Let\'s Begin</h2></a></div></div>';
+    '<a href="#" id="begin"><h2>Let\'s Begin</h2></a></div></div>' +
+    '<div class="bottom-bar"><a href="#" id="speakeasy" style="display:block; height:100%; width:100%;"></a></div>';
   $('.main-body').append(homePage);
   $('#begin').click(function(e) {
     e.preventDefault();
     var dateTypeAnswer = questionDateType(); 
+    speakEasy = 'false';
+    return false;
+  });
+  $('#speakeasy').click(function(e) {
+    e.preventDefault();
+    dateHipster = 'true';
+    dateDrinks = 'true';
+    dateRomance = 'true'; 
+    speakEasy = 'true';
+    results();
     return false;
   });
 }
@@ -279,7 +290,7 @@ function results() {
   $('.main-body').empty();
   var selectionPage = '<div class="center" id="shade-darkest">' +
                       '<br>' +
-                      '<p style="color: lightgrey; font-size: 4em; margin: 40px">Here are some ideas I think you\'ll like!</p>' +
+                      '<p style="color: lightgrey; font-size: 4em; margin: 40px;">Here are some ideas I think you\'ll like!</p>' +
                       '<ul class="accordion" id="accordion"></ul>' +
                       '<br>' +
                       '<h4 style="color: lightgrey"></h4></div>'; 
@@ -295,7 +306,7 @@ function results() {
       $('html').css('background-color', 'rgba(0,0,0,0.8)');
       timeToGo();
       return false;
-    }, 300);    
+    }, 1000);    
 }
 
 function addSlider() {
@@ -369,6 +380,7 @@ function createBackbone() {
         var view = new IdeaView({model: idea});
         that.$el.append(view.render().$el);
       });
+      // addslider();
     }
   })
 
@@ -383,7 +395,8 @@ function createBackbone() {
     return {
      hipster: dateHipster,
      drinks: dateDrinks,
-     romantic: dateRomance
+     romantic: dateRomance,
+     speakeasy: speakEasy
     }
   }
 
@@ -397,7 +410,7 @@ function createBackbone() {
     // ideaList.fetch({reset: true});
 
     // $('select').on('change', function(e){
-     ideaList.fetch({
+      ideaList.fetch({
        reset: true,
        data: getParams()
       });

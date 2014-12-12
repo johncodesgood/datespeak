@@ -20,18 +20,19 @@ namespace :db do
       date_type = row["Type"]
       hipster = row["Hipster"]
       romantic = row["Romantic"]
+      speakeasy = row["Speakeasy"]
       description_link = row["Description Link"]
       description = row["Description"]
 
 
       sql_statement = <<-eos
         INSERT INTO ideas
-            (title, place, address, area, price, place_link, date_number, time_of_year, weekend_weekday, indoor_outdoor, drinks, date_type, hipster, romantic, description_link, description)
+            (title, place, address, area, price, place_link, date_number, time_of_year, weekend_weekday, indoor_outdoor, drinks, date_type, hipster, romantic, speakeasy, description_link, description)
          VALUES
-          ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
+          ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
       eos
 
-      conn.exec_params(sql_statement, [title, place, address, area, price, place_link, date_number, time_of_year, weekend_weekday, indoor_outdoor, drinks, date_type, hipster, romantic, description_link, description])
+      conn.exec_params(sql_statement, [title, place, address, area, price, place_link, date_number, time_of_year, weekend_weekday, indoor_outdoor, drinks, date_type, hipster, romantic, speakeasy, description_link, description])
     end
     conn.close
   end

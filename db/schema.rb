@@ -31,22 +31,11 @@ ActiveRecord::Schema.define(version: 20141204170217) do
     t.string   "date_type",        default: ""
     t.boolean  "hipster",          default: false
     t.boolean  "romantic",         default: false
+    t.boolean  "speakeasy",        default: false
     t.string   "description_link", default: ""
     t.text     "description",      default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "players", force: true do |t|
-    t.string  "name",    limit: 100
-    t.integer "age"
-    t.integer "team_id"
-  end
-
-  create_table "teams", force: true do |t|
-    t.string "name",     limit: 100
-    t.string "location", limit: 100
-    t.string "slogan",   limit: 250
   end
 
 end
