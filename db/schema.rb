@@ -37,4 +37,16 @@ ActiveRecord::Schema.define(version: 20141204170217) do
     t.datetime "updated_at"
   end
 
+  create_table "players", force: true do |t|
+    t.string  "name",    limit: 100
+    t.integer "age"
+    t.integer "team_id"
+  end
+
+  create_table "teams", force: true do |t|
+    t.string "name",     limit: 100
+    t.string "location", limit: 100
+    t.string "slogan",   limit: 250
+  end
+
 end

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Speak</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|Fredericka+the+Great|IM+Fell+Double+Pica|Slabo+27px' rel='stylesheet' type='text/css'>
+
+  <script type="text/template" id="idea-template"> 
+        <div class="heading"><%= idea.title %></div>
+        <div class="bgDescription"></div>
+        <div class="description">
+          <h2><%= idea.place %></h2>
+          <p><%= idea.description %></p>
+          <a href="<%= idea.place_link %>" target="_blank" > <%= idea.place_link %></a>
+        </div>
+  </script>
+
+</head>
+<body>
+  <div class="main-body">
+  </div>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/underscore.js"></script>
+  <script src="./js/backbone.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

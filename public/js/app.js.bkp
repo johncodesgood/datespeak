@@ -1,0 +1,60 @@
+var Idea = Backbone.Model.extend({});
+
+var IdeaList = Backbone.Collection.extend({
+  model: Idea,
+  url: 'http://localhost:3000/ideas'
+});
+
+var IdeaView = Backbone.View.extend({
+  tagName: 'li',
+  template: _.template($("#idea-template").html()),
+  events: {
+    "click" : "toggleDetails"
+  },
+  render: function(){
+    this.$el.html( this.template({ idea: this.model.toJSON()}));
+    return this;
+  },
+  toggleDetails: function(){
+    this.$el.find('.details').slideToggle();
+  }
+})
+
+var IdeaListView = Backbone.View.extend({
+  initialize: function() {
+    this.listenTo( this.collection, 'reset', this.render );
+  },
+  render: function() {
+    this.$el.empty();
+    var that = this;
+    this.collection.each(function(idea) {
+      var view = new IdeaView({model: idea});
+      that.$el.append(view.render().$el);
+    });
+  }
+})
+
+function getParams(){
+  return {
+    area: $('#area').val(),
+    price: $('#price').val()
+  }
+}
+
+
+$(function(){
+  ideaList = new IdeaList();
+  ideaListView = new IdeaListView({
+    collection: ideaList,
+    el: "#ideas"
+  })
+  ideaList.fetch({reset: true});
+
+  $('select').on('change', function(e){
+    ideaList.fetch({
+      reset: true,
+      data: getParams()
+    });
+  })
+
+})
