@@ -170,13 +170,13 @@ function questionDrinks() {
   $('.main-body').append(questionDrinksDisplay);
   $('#alcohol-yes').click(function(e) {
     e.preventDefault();
-    dateDrinks = 'yes';
+    dateDrinks = 'true';
     console.log(dateDrinks);
     questionRomance(); 
   });
   $('#alcohol-no').click(function(e) {
     e.preventDefault();
-    dateDrinks = 'no';
+    dateDrinks = 'false';
     console.log(dateDrinks); 
     questionRomance();
   });
@@ -197,13 +197,13 @@ function questionRomance() {
   $('.main-body').append(questionRomanceDisplay);
   $('#romantic').click(function(e) {
     e.preventDefault();
-    dateRomance = 'yes';
+    dateRomance = 'true';
     console.log(dateRomance);
     questionHipster(); 
   });
   $('#fun').click(function(e) {
     e.preventDefault();
-    dateRomance = 'no';
+    dateRomance = 'false';
     console.log(dateRomance); 
     questionHipster();
   });
@@ -224,13 +224,13 @@ function questionHipster() {
   $('.main-body').append(questionHipsterDisplay);
   $('#hipster-yes').click(function(e) {
     e.preventDefault();
-    dateHipster = 'yes';
+    dateHipster = 'true';
     console.log(dateHipster);
     questionDateNum(); 
   });
   $('#hipster-no').click(function(e) {
     e.preventDefault();
-    dateHipster = 'no';
+    dateHipster = 'false';
     console.log(dateHipster); 
     questionDateNum();
   });
@@ -277,26 +277,13 @@ function results() {
   $('html').css('-o-background-size', 'cover');
   $('html').css('background-size', 'cover');
   $('.main-body').empty();
-  // var selectionPage = "<div id='filters'><select id='area'><option value=''>Brooklyn</option><option>Central Park</option><option>Chinatown</option></select><select id='price'><option value=''>$</option><option>$$</option><option>$$$</option></select></div><ul id='ideas'></ul>"
-  // var selectionPage = "<div class='center' id='shade-darkest'><h2 style='color: lightgrey'>Here are some ideas I think you'll like!</h2><ul id='ideas'></ul><br><br><a href='#' id='try-again' style='font-size: 1.6em; color: lightgrey'>(Don\'t like these ideas? Try Again)</a></div>";
-  // var selectionPage = '<ul class="accordion" id="accordion">' + 
-  var selectionPage = '<div class="center" id="shade-darkest"><br><p style="color: lightgrey; font-size: 4em; margin: 40px">Here are some ideas I think you\'ll like!</p><ul class="accordion" id="accordion"></ul><br><h4 style="color: lightgrey"></h4></div>' 
-  //                     '<li class="bg1">' +
-  //                     '<div class="heading">Heading</div>' +
-  //                     '<div class="bgDescription"></div>' +
-  //                     '<div class="description">' +
-  //                     '<h2>Heading</h2>' +
-  //                     '<p>Some descriptive text</p>' +
-  //                     '<a href="#">more ?</a>' +
-  //                     '</div></li>' +
-  //                     '<li class="bg1">' +
-  //                     '<div class="heading">Heading</div>' +
-  //                     '<div class="bgDescription"></div>' +
-  //                     '<div class="description">' +
-  //                     '<h2>Heading</h2>' +
-  //                     '<p>Some descriptive text</p>' +
-  //                     '<a href="#">more ?</a>' +
-  //                     '</div></li></ul>';
+  var selectionPage = '<div class="center" id="shade-darkest">' +
+                      '<br>' +
+                      '<p style="color: lightgrey; font-size: 4em; margin: 40px">Here are some ideas I think you\'ll like!</p>' +
+                      '<ul class="accordion" id="accordion"></ul>' +
+                      '<br>' +
+                      '<h4 style="color: lightgrey"></h4></div>'; 
+
   $('.main-body').append(selectionPage);
   // $('#try-again').click(function(e) {
   //   e.preventDefault();
@@ -309,23 +296,6 @@ function results() {
       timeToGo();
       return false;
     }, 300);    
-  // $('#accordion > li').hover(
-  //       function () {
-  //           var $this = $(this);
-  //           $this.stop().animate({'height':'280px'},500);
-  //           $('.heading',$this).stop(true,true).fadeOut();
-  //           $('.bgDescription',$this).stop(true,true).slideDown(500);
-  //           $('.description',$this).stop(true,true).fadeIn();
-  //       },
-  //       function () {
-  //           var $this = $(this);
-  //           $this.stop().animate({'height':'85px'},1000);
-  //           $('.heading',$this).stop(true,true).fadeIn();
-  //           $('.description',$this).stop(true,true).fadeOut(500);
-  //           $('.bgDescription',$this).stop(true,true).slideUp(700);
-  //       }
-  //   );
-
 }
 
 function addSlider() {
@@ -411,7 +381,9 @@ function createBackbone() {
 
   function getParams(){
     return {
-     hipster: 'true'
+     hipster: dateHipster,
+     drinks: dateDrinks,
+     romantic: dateRomance
     }
   }
 
@@ -422,7 +394,7 @@ function createBackbone() {
       collection: ideaList,
       el: "#accordion"
     })
-    ideaList.fetch({reset: true});
+    // ideaList.fetch({reset: true});
 
     // $('select').on('change', function(e){
      ideaList.fetch({

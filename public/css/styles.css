@@ -182,13 +182,6 @@ vertical-align:middle
    height: 100%;
 }
 
-.clearfix:after { 
-/*   content: " ";
-   display: block; 
-   height: 0; 
-   clear: both;*/
-/*   display: inline-block;*/
-}
 
 .btn {
   /*background: #382b21;*/

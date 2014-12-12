@@ -1,3 +1,4 @@
+require 'pry-rails'
 class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
@@ -9,6 +10,7 @@ class IdeasController < ApplicationController
 
   def index
     ideas = Idea.date_type(options["date_type"]).drinks(options["drinks"]).romantic(options["romantic"]).hipster(options["hipster"]).date_number(options["date_number"])
+    binding.pry
     render json: ideas
   end
 
