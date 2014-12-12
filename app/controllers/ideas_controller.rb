@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
   # end
 
   def index
-    ideas = Idea.date_type(options["date_type"]).drinks(options["drinks"]).romantic(options["romantic"]).hipster(options["hipster"]).date_number(options["date_number"].speakeasy(options["speakeasy"])
+    ideas = Idea.date_type(options["date_type"]).drinks(options["drinks"]).romantic(options["romantic"]).hipster(options["hipster"]).date_number(options["date_number"]).speakeasy(options["speakeasy"])
     render json: ideas
   end
 
