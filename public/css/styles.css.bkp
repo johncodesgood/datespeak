@@ -1,13 +1,11 @@
 html { 
-/*  background: url(../images/cinemagraph-bar.gif) no-repeat center center fixed; 
+  background: url(../images/cinemagraph-bar.gif) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
-  font-size: 100%;*/
-  background-color: black;
-  height: 100%;
+  font-size: 100%;
 }
 
 body {
@@ -15,7 +13,6 @@ body {
 	font-family: 'IM Fell English SC', serif;
   margin: 0px;
   height: 100%;
-  background-color: black;
 }
 
 a {
@@ -151,15 +148,8 @@ ul {
 .bottom-bar {
   width: 5%;
   height: 5%;
-  margin-top: 15%;
-  margin-left: 42%;
-}
-
-.below-bottom-bar {
-  width: 5%;
-  height: 5%;
-  margin-top: 2%;
-  margin-left: 92%;
+  margin-top: 10%;
+  margin-left: 46%;
 }
 
 .hidden-text {
@@ -196,13 +186,7 @@ vertical-align:middle
 
 
 .main-body {
-  background: black url(../images/cinemagraph-bar.gif) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  font-size: 100%;
+   height: 100%;
 }
 
 
@@ -226,7 +210,7 @@ vertical-align:middle
   padding: 15px 25px 15px 25px;
   border: solid #4f3310 1px;
   text-decoration: none;
-  margin: 40px 40px 40px 40px;
+  margin: 40px;
 }
 
 .btn:hover {
@@ -387,20 +371,6 @@ ul.accordion li .bgDescription{
     width:100%;
     display:none;
 }
-
-
-
-
-#cloud-01 { position: relative; background: url(../images/clouds1.png) no-repeat left -100px; }                                                                                                               
-#cloud-02 { position: relative; background: url(../images/clouds.png) no-repeat left -100px; }
-#speakeasy-01 { position: relative; background: url(../images/speakeasy6.jpg) no-repeat left -100px; background-size: 385px 300px; }
-#speakeasy-02 { position: relative; background: url(../images/speakeasy2.jpg) no-repeat left -100px; background-size: 468px 248px; }
-#speakeasy-04 { position: relative; background: url(../images/speakeasy1.jpg) no-repeat left -100px; background-size: 480px 318px; }
-#speakeasy-03 { position: relative; background: url(../images/speakeasy5.jpg) no-repeat left -100px; background-size: 352px 237px; }
-#speakeasy-05 { position: relative; background: url(../images/speakeasy4.jpg) no-repeat left -100px; background-size: 495px 330px; }
-#speakeasy-06 { position: relative; background: url(../images/speakeasy-slow1.gif) no-repeat left -100px; background-size: 360px 272px; }
-#speakeasy-07 { position: relative; background: url(../images/speakeasy-slow2.jpg) no-repeat left -100px; background-size: 250px 195px; }
-
 
 
 
